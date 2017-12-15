@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.flowpackage.fr.bda.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="RecommendWebService" targetNamespace="http://service.flowpackage.fr.bda.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.flowpackage.fr.bda.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.flowpackage.fr.bda.com/">
+  <xs:element name="daysBetween" type="tns:daysBetween"/>
+  <xs:element name="daysBetweenResponse" type="tns:daysBetweenResponse"/>
+  <xs:element name="recommendSubmitXML" type="tns:recommendSubmitXML"/>
+  <xs:element name="recommendSubmitXMLResponse" type="tns:recommendSubmitXMLResponse"/>
+  <xs:complexType name="daysBetween">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="daysBetweenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recommendSubmitXML">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xmlString" type="xs:string"/>
+      <xs:element minOccurs="0" name="parm_phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="parm_endingDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="parm_province3GFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_province3GFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_province4GFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_province4GFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_provinceGeneralFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_provinceGeneralFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domestic4GFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domestic4GFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domesticGeneralFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domesticGeneralFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_provinceFreeTimeFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_provinceFreeTimeFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domesticFreeTimeFlowUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_domesticFreeTimeFlowUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_totalUsable" type="xs:double"/>
+      <xs:element minOccurs="0" name="parm_totalUsed" type="xs:double"/>
+      <xs:element minOccurs="0" name="dyfield1" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield2" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield3" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield4" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield5" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield6" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield7" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield8" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield9" type="xs:string"/>
+      <xs:element minOccurs="0" name="dyfield10" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recommendSubmitXMLResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:recommendResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recommendResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mode" type="xs:string"/>
+      <xs:element minOccurs="0" name="resContent" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="daysBetweenResponse">
+    <wsdl:part element="tns:daysBetweenResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recommendSubmitXML">
+    <wsdl:part element="tns:recommendSubmitXML" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recommendSubmitXMLResponse">
+    <wsdl:part element="tns:recommendSubmitXMLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="daysBetween">
+    <wsdl:part element="tns:daysBetween" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RecommendWebService">
+    <wsdl:operation name="daysBetween">
+      <wsdl:input message="tns:daysBetween" name="daysBetween">
+    </wsdl:input>
+      <wsdl:output message="tns:daysBetweenResponse" name="daysBetweenResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recommendSubmitXML">
+      <wsdl:input message="tns:recommendSubmitXML" name="recommendSubmitXML">
+    </wsdl:input>
+      <wsdl:output message="tns:recommendSubmitXMLResponse" name="recommendSubmitXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecommendWebServiceSoapBinding" type="tns:RecommendWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="daysBetween">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="daysBetween">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="daysBetweenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recommendSubmitXML">
+      <soap:operation soapAction="recommendSubmitXML" style="document"/>
+      <wsdl:input name="recommendSubmitXML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recommendSubmitXMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecommendWebService">
+    <wsdl:port binding="tns:RecommendWebServiceSoapBinding" name="RecommendWebServicePort">
+      <soap:address location="http://localhost:8080/bdafr/services/recommendPackage"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
